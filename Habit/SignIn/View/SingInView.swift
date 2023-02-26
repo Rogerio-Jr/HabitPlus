@@ -107,7 +107,7 @@ extension SingInView {
 extension SingInView {
     var registerLink: some View {
         VStack {
-            Text("Ainda não possui um login ativo?")
+            Text("Ainda não possui um login ativo?,APENAS UM TESTE")
                 .foregroundColor(Color.gray)
                 .padding(.top, 48)
             
