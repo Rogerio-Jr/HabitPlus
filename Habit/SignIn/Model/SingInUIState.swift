@@ -7,7 +7,7 @@
 
 import Foundation
 
-enum SingInUiState {
+enum SingInUiState: Equatable {
     case nome
     case loading
     case goToHomeScreen

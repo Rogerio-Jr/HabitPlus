@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		11042FFD29ACE4A800804E4D /* String+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11042FFC29ACE4A800804E4D /* String+Extension.swift */; };
+		11042FFF29ACED3C00804E4D /* LoadingButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11042FFE29ACED3C00804E4D /* LoadingButtonView.swift */; };
 		112E0CC729AB8FAC00E49235 /* EditTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 112E0CC629AB8FAC00E49235 /* EditTextView.swift */; };
 		112E0CCA29ABA1E700E49235 /* CustomTextFieldStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 112E0CC929ABA1E700E49235 /* CustomTextFieldStyle.swift */; };
 		11424CE3298AE79900A2906E /* SingInView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11424CE2298AE79900A2906E /* SingInView.swift */; };
@@ -30,6 +32,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		11042FFC29ACE4A800804E4D /* String+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extension.swift"; sourceTree = "<group>"; };
+		11042FFE29ACED3C00804E4D /* LoadingButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingButtonView.swift; sourceTree = "<group>"; };
 		112E0CC629AB8FAC00E49235 /* EditTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditTextView.swift; sourceTree = "<group>"; };
 		112E0CC929ABA1E700E49235 /* CustomTextFieldStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextFieldStyle.swift; sourceTree = "<group>"; };
 		11424CE2298AE79900A2906E /* SingInView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingInView.swift; sourceTree = "<group>"; };
@@ -64,10 +68,19 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		11042FF929ACE47500804E4D /* Lang */ = {
+			isa = PBXGroup;
+			children = (
+				11042FFC29ACE4A800804E4D /* String+Extension.swift */,
+			);
+			path = Lang;
+			sourceTree = "<group>";
+		};
 		112E0CC529AB8F9700E49235 /* View */ = {
 			isa = PBXGroup;
 			children = (
 				112E0CC629AB8FAC00E49235 /* EditTextView.swift */,
+				11042FFE29ACED3C00804E4D /* LoadingButtonView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -118,6 +131,7 @@
 		1170B26E29A1D16700D6F102 /* Commom */ = {
 			isa = PBXGroup;
 			children = (
+				11042FF929ACE47500804E4D /* Lang */,
 				112E0CC829ABA17B00E49235 /* Style */,
 				112E0CC529AB8F9700E49235 /* View */,
 				1170B26F29A1D17600D6F102 /* Model */,
@@ -348,6 +362,8 @@
 				1182B07C29A326410079D160 /* SingUpViewModel.swift in Sources */,
 				11FAAD5A298954B300038D7C /* SplashUIState.swift in Sources */,
 				11A38A8329913F190021A51D /* HomeViewModel.swift in Sources */,
+				11042FFF29ACED3C00804E4D /* LoadingButtonView.swift in Sources */,
+				11042FFD29ACE4A800804E4D /* String+Extension.swift in Sources */,
 				1182B07E29A3273C0079D160 /* SingUpViewRouter.swift in Sources */,
 				11FAAD452989521D00038D7C /* HabitApp.swift in Sources */,
 				11FAAD582989538600038D7C /* SplashView.swift in Sources */,

@@ -45,15 +45,15 @@ struct SingInView: View {
                                 
                                 emailField
                                 
-                                passWordFied
+                                passWordField
                                 
                                 enterButton
                                 
                                 registerLink
                                 
-                                Text("Copyrigth @YYY")
+                                Text("Copyrigth Rogerio Jr - 2022")
                                     .foregroundColor(Color.gray)
-                                    .font(Font.system(size: 16).bold())
+                                    .font(Font.system(size: 13).bold())
                                     .padding(.top, 16)
                             }
                         }
@@ -80,37 +80,42 @@ struct SingInView: View {
 
 extension SingInView {
     var emailField: some View {
-//        TextField("", text: $email)
-//            .border(Color.orange)
         EditTextView(text: $email,
                      placeholder: "E-mail",
                      keyboard: .emailAddress,
                      error: "email invalido",
-                     failure: email.count < 5)
+                     failure: !email.isEmail())
         
     }}
 
 extension SingInView {
-    var passWordFied: some View {
-        SecureField("", text: $password)
-            .border(Color.orange)
+    var passWordField: some View {
+    EditTextView(text: $password,
+                 placeholder: "Senha",
+                 keyboard: .emailAddress,
+                 error: "Senha deve ter ao menos 8 caracteres",
+                 failure: password.count < 8,
+                 isSecure: true)
     }}
 
 extension SingInView {
   var enterButton: some View {
-    Button("Entrar") {
-        viewModel.login(email: email, password: password)
-    }
+    
+      LoadingButtonView(action: {
+          viewModel.login(email: email, password: password)
+      }, disable: !email.isEmail() || password.count < 8,
+                        showProgress: self.viewModel.uiState == SingInUiState.loading,
+                        text: "Entrar")
   }
 }
 
 extension SingInView {
     var registerLink: some View {
         VStack {
-            Text("Ainda não possui um login ativo?,APENAS UM TESTE teste")
+            Text("Ainda não possui um login ativo?")
                 .foregroundColor(Color.gray)
                 .padding(.top, 48)
-            
+                        
             ZStack {
                 NavigationLink(destination:
                                 viewModel.singUpView(),
