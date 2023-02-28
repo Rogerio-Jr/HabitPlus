@@ -83,7 +83,7 @@ extension SingInView {
         EditTextView(text: $email,
                      placeholder: "E-mail",
                      keyboard: .emailAddress,
-                     error: "email invalido",
+                     error: "E-mail inválido",
                      failure: !email.isEmail())
         
     }}

@@ -29,13 +29,15 @@ struct SingUpView: View {
                     VStack(alignment: .leading, spacing: 8) {
                         
                         Text("Cadastro")
-                            .foregroundColor(.black)
+                            .foregroundColor(Color("textColor"))
                             .font(Font.system(.title).bold())
                             .padding(.bottom, 8)
                         
                         fullNameField
                         
                         emailField
+                        
+                        passWordFied
                         
                         documentField
                         
@@ -68,34 +70,64 @@ struct SingUpView: View {
 
 extension SingUpView {
     var fullNameField: some View {
-        TextField("", text: $fullName)
-        .border(Color.orange)}}
+        EditTextView(text: $fullName,
+                     placeholder: "Entre com o nome completo *",
+                     keyboard: .alphabet,
+                     error: "Nome inválido",
+                     failure: fullName.count < 3)
+    }
+}
 
 extension SingUpView {
     var emailField: some View {
-        TextField("", text: $email)
-        .border(Color.orange)}}
+        EditTextView(text: $email,
+                     placeholder: "Entre com o e-mail completo *",
+                     keyboard: .emailAddress,
+                     error: "E-mail inválido",
+                     failure: !email.isEmail())}}
 
 extension SingUpView {
     var passWordFied: some View {
-        SecureField("", text: $password)
-            .border(Color.orange)
+        EditTextView(text: $password,
+                     placeholder: "Entre com a sua senha *",
+                     keyboard: .emailAddress,
+                     error: "Senha deve ter ao menos 8 caracteres",
+                     failure: password.count < 8,
+                     isSecure: true)
     }}
 
 extension SingUpView {
     var documentField: some View {
-        TextField("", text: $document)
-        .border(Color.orange)}}
+        EditTextView(text: $document,
+                     placeholder: "Entre com o seu CPF *",
+                     keyboard: .numberPad,
+                     error: "CPF inválido",
+                     failure: document.count != 11 )
+        //TODO: mask
+        //TODO: isDisabled
+    }}
 
 extension SingUpView {
     var phoneField: some View {
-        TextField("", text: $phone)
-        .border(Color.orange)}}
+        EditTextView(text: $phone,
+                     placeholder: "Entre com o seu celular *",
+                     keyboard: .numberPad,
+                     error: "Entre com o DDD +8 ou 9 digitos",
+                     failure: phone.count < 10 || phone.count >= 12 )
+        //TODO: mask
+        
+    }}
 
 extension SingUpView {
     var birthdayField: some View {
-        TextField("", text: $birthday)
-        .border(Color.orange)}}
+        EditTextView(text: $birthday,
+                     placeholder: "Entre com a data do seu nascimento *",
+                     keyboard: .numberPad,
+                     error: "Data deve ser dd/MM/yyyy",
+                     failure: birthday.count != 10 )
+        //TODO: mask
+        
+    }}
 
 extension SingUpView {
     var genderField: some View {
@@ -113,14 +145,27 @@ extension SingUpView {
 
 extension SingUpView {
     var saveButton: some View {
-        Button("Realize o seu cadastro") {
+        LoadingButtonView(action: {
             viewModel.singUp()
+        }, disable: !email.isEmail() ||
+                          password.count < 8 ||
+                          fullName.count < 3 ||
+                          document.count != 11 ||
+                          phone.count < 10 || phone.count >= 12 ||
+                          birthday.count != 10,
+                          
+                          showProgress: self.viewModel.uiState == SingUpUIState.loading,
+                          text: "Realize seu cadastro")
         }
     }
-}
+
 struct SingUpView_Previews: PreviewProvider {
     static var previews: some View {
-        SingUpView(viewModel: SingUpViewModel())
+        ForEach(ColorScheme.allCases, id: \.self) {
+            SingUpView(viewModel: SingUpViewModel())
+                .previewDevice("Iphone 11")
+                .preferredColorScheme($0)
+        }
     }
 }
 

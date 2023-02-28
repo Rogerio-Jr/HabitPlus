@@ -7,7 +7,7 @@
 
 import Foundation
 
-enum SingUpUIState {
+enum SingUpUIState: Equatable {
     case nome
     case loading
     case sucess
