@@ -11,9 +11,6 @@ struct SingInView: View {
     
     @ObservedObject var viewModel: SingInViewModel
     
-    @State var email = ""
-    @State var password = ""
-    
     @State var action: Int? = 0
     
     @State var navigationHidden = true
@@ -80,21 +77,21 @@ struct SingInView: View {
 
 extension SingInView {
     var emailField: some View {
-        EditTextView(text: $email,
+        EditTextView(text: $viewModel.email,
                      placeholder: "E-mail",
                      keyboard: .emailAddress,
                      error: "E-mail inválido",
-                     failure: !email.isEmail())
+                     failure: !viewModel.email.isEmail())
         
     }}
 
 extension SingInView {
     var passWordField: some View {
-    EditTextView(text: $password,
+        EditTextView(text: $viewModel.password,
                  placeholder: "Senha",
                  keyboard: .emailAddress,
                  error: "Senha deve ter ao menos 8 caracteres",
-                 failure: password.count < 8,
+                     failure: viewModel.password.count < 8,
                  isSecure: true)
     }}
 
@@ -102,8 +99,8 @@ extension SingInView {
   var enterButton: some View {
     
       LoadingButtonView(action: {
-          viewModel.login(email: email, password: password)
-      }, disable: !email.isEmail() || password.count < 8,
+          viewModel.login()
+      }, disable: !viewModel.email.isEmail() || viewModel.password.count < 8,
                         showProgress: self.viewModel.uiState == SingInUiState.loading,
                         text: "Entrar")
   }

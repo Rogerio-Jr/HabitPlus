@@ -9,14 +9,6 @@ import SwiftUI
 
 struct SingUpView: View {
     
-    @State var fullName = ""
-    @State var email = ""
-    @State var password = ""
-    @State var document = ""
-    @State var phone = ""
-    @State var birthday = ""
-    @State var gender = Gender.male
-    
     @ObservedObject var viewModel: SingUpViewModel
     
     //TODO: gender
@@ -70,68 +62,68 @@ struct SingUpView: View {
 
 extension SingUpView {
     var fullNameField: some View {
-        EditTextView(text: $fullName,
+        EditTextView(text: $viewModel.fullName,
                      placeholder: "Entre com o nome completo *",
                      keyboard: .alphabet,
                      error: "Nome inválido",
-                     failure: fullName.count < 3)
+                     failure: viewModel.fullName.count < 3)
     }
 }
 
 extension SingUpView {
     var emailField: some View {
-        EditTextView(text: $email,
+        EditTextView(text: $viewModel.email,
                      placeholder: "Entre com o e-mail completo *",
                      keyboard: .emailAddress,
                      error: "E-mail inválido",
-                     failure: !email.isEmail())}}
+                     failure: !viewModel.email.isEmail())}}
 
 extension SingUpView {
     var passWordFied: some View {
-        EditTextView(text: $password,
+        EditTextView(text: $viewModel.password,
                      placeholder: "Entre com a sua senha *",
                      keyboard: .emailAddress,
                      error: "Senha deve ter ao menos 8 caracteres",
-                     failure: password.count < 8,
+                     failure: viewModel.password.count < 8,
                      isSecure: true)
     }}
 
 extension SingUpView {
     var documentField: some View {
-        EditTextView(text: $document,
+        EditTextView(text: $viewModel.document,
                      placeholder: "Entre com o seu CPF *",
                      keyboard: .numberPad,
                      error: "CPF inválido",
-                     failure: document.count != 11 )
+                     failure: viewModel.document.count != 11 )
         //TODO: mask
         //TODO: isDisabled
     }}
 
 extension SingUpView {
     var phoneField: some View {
-        EditTextView(text: $phone,
+        EditTextView(text: $viewModel.phone,
                      placeholder: "Entre com o seu celular *",
                      keyboard: .numberPad,
                      error: "Entre com o DDD +8 ou 9 digitos",
-                     failure: phone.count < 10 || phone.count >= 12 )
+                     failure: viewModel.phone.count < 10 || viewModel.phone.count >= 12 )
         //TODO: mask
         
     }}
 
 extension SingUpView {
     var birthdayField: some View {
-        EditTextView(text: $birthday,
+        EditTextView(text: $viewModel.birthday,
                      placeholder: "Entre com a data do seu nascimento *",
                      keyboard: .numberPad,
                      error: "Data deve ser dd/MM/yyyy",
-                     failure: birthday.count != 10 )
+                     failure: viewModel.birthday.count != 10 )
         //TODO: mask
         
     }}
 
 extension SingUpView {
     var genderField: some View {
-        Picker("Gender", selection: $gender){
+        Picker("Gender", selection: $viewModel.gender){
             ForEach(Gender.allCases, id: \.self) { value in
                 Text(value.rawValue)
                     .tag(value)
@@ -147,12 +139,12 @@ extension SingUpView {
     var saveButton: some View {
         LoadingButtonView(action: {
             viewModel.singUp()
-        }, disable: !email.isEmail() ||
-                          password.count < 8 ||
-                          fullName.count < 3 ||
-                          document.count != 11 ||
-                          phone.count < 10 || phone.count >= 12 ||
-                          birthday.count != 10,
+        }, disable: !viewModel.email.isEmail() ||
+                          viewModel.password.count < 8 ||
+                          viewModel.fullName.count < 3 ||
+                          viewModel.document.count != 11 ||
+                          viewModel.phone.count < 10 || viewModel.phone.count >= 12 ||
+                          viewModel.birthday.count != 10,
                           
                           showProgress: self.viewModel.uiState == SingUpUIState.loading,
                           text: "Realize seu cadastro")

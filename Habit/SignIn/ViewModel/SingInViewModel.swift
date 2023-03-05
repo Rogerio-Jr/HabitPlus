@@ -10,6 +10,9 @@ import Combine
 
 class SingInViewModel: ObservableObject {
     
+    @Published var email = ""
+    @Published var password = ""
+    
     private var cancellable: AnyCancellable?
     
     private let publisher = PassthroughSubject<Bool, Never>()
@@ -30,7 +33,7 @@ class SingInViewModel: ObservableObject {
         cancellable?.cancel()
     }
     
-    func login(email: String, password: String){
+    func login(){
         self.uiState = .loading
         DispatchQueue.main.asyncAfter(deadline: .now()+1){
             self.uiState = .goToHomeScreen
