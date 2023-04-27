@@ -25,19 +25,61 @@ class SingUpViewModel: ObservableObject {
     func singUp(){
         self.uiState = .loading
         
-        WebService.postUser(fullName: fullName,
-                            email: email,
-                            password: password,
-                            document: document,
-                            phone: phone,
-                            birthday: birthday,
-                            gender: gender.index)
+        let formatter = DateFormatter()
+        formatter.locale = Locale(identifier: "en_US_POSIX")
+        formatter.dateFormat = "dd/MM/yyyy"
         
-//        DispatchQueue.main.asyncAfter(deadline: .now()+1){
-//           // self.uiState = .error("Usuario já existente!")
-//            self.uiState = .sucess
-//            self.publisher.send(true)
-//        }
+        let dateFomatted = formatter.date(from: birthday)
+        
+        guard let dateFomatted = dateFomatted else {
+            self.uiState = .error("Data inválida \(birthday)")
+            return
+        }
+        
+        formatter.dateFormat = "yyyy-MM-dd"
+        let birthday = formatter.string(from: dateFomatted)
+        
+        WebService.postUser(request: SingUpRequest(fullName: fullName,
+                                                   email: email,
+                                                   password: password,
+                                                   document: document,
+                                                   phone: phone,
+                                                   birthday: birthday,
+                                                   gender: gender.index)){ (sucessResponse, errorResponse) in
+            if let error = errorResponse {
+                DispatchQueue.main.async {
+                    self.uiState = .error(error.detail)
+                }
+            }
+            
+            if let sucess = sucessResponse {
+                
+                WebService.login(request: SingInRequest(email: self.email,
+                                                        password: self.password)) { (successResponse, errorResponse) in
+                    
+                    if let errorSignIn = errorResponse {
+                        DispatchQueue.main.async {
+                            // Main Thread
+                            self.uiState = .error(errorSignIn.detail.message)
+                        }
+                    }
+                    
+                    if let successSignIn = successResponse {
+                        DispatchQueue.main.async {
+                            print(successSignIn)
+                            self.publisher.send(sucess)
+                                self.uiState = .sucess
+                           
+                        }
+                    }
+                    
+                }
+                
+                DispatchQueue.main.async {
+                    
+                }
+            }
+        }
     }
 }
 

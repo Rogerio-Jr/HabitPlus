@@ -4,49 +4,64 @@
 //
 //  Created by Rogério Júnior on 01/02/23.
 //
-
 import SwiftUI
 import Combine
 
-class SingInViewModel: ObservableObject {
+class SignInViewModel: ObservableObject {
+  
+  @Published var email = ""
+  @Published var password = ""
+  
+  private var cancellable: AnyCancellable?
+  
+  private let publisher = PassthroughSubject<Bool, Never>()
+  
+  @Published var uiState: SingInUiState = .none
+  
+  init() {
+    cancellable = publisher.sink { value in
+      print("usuário criado! goToHome: \(value)")
+      
+      if value {
+        self.uiState = .goToHomeScreen
+      }
+    }
+  }
+  
+  deinit {
+    cancellable?.cancel()
+  }
+  
+  func login() {
+    self.uiState = .loading
     
-    @Published var email = ""
-    @Published var password = ""
-    
-    private var cancellable: AnyCancellable?
-    
-    private let publisher = PassthroughSubject<Bool, Never>()
-    
-    @Published var uiState: SingInUiState = .nome
-    
-    init(){
-        cancellable = publisher.sink{ value in
-            print("usuario criado! goToHome: \(value)")
-            
-            if value {
-                self.uiState = .goToHomeScreen
-            }
+    WebService.login(request: SingInRequest(email: email,
+                                            password: password)) { (successResponse, errorResponse) in
+      
+      if let error = errorResponse {
+        DispatchQueue.main.async {
+          // Main Thread
+            self.uiState = .error(error.detail.message)
         }
-    }
-    
-    deinit {
-        cancellable?.cancel()
-    }
-    
-    func login(){
-        self.uiState = .loading
-        DispatchQueue.main.asyncAfter(deadline: .now()+1){
-            self.uiState = .goToHomeScreen
+      }
+      
+      if let success = successResponse {
+        DispatchQueue.main.async {
+          print(success)
+          self.uiState = .goToHomeScreen
         }
+      }
+      
     }
+  }
+  
 }
 
-extension SingInViewModel {
-    func homeView() -> some View {
-        return SingInViewRouter.makeHomeView()
-    }
-    func singUpView() -> some View {
-        return SingInViewRouter.makeSingUpView(publisher: publisher)
-    }
+extension SignInViewModel {
+  func homeView() -> some View {
+    return SingInViewRouter.makeHomeView()
+  }
+  func signUpView() -> some View {
+    return SingInViewRouter.makeSingUpView(publisher: publisher)
+  }
 }
-

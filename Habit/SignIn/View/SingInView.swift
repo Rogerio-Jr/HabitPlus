@@ -9,7 +9,7 @@ import SwiftUI
 
 struct SingInView: View {
     
-    @ObservedObject var viewModel: SingInViewModel
+    @ObservedObject var viewModel: SignInViewModel
     
     @State var action: Int? = 0
     
@@ -115,7 +115,7 @@ extension SingInView {
                         
             ZStack {
                 NavigationLink(destination:
-                                viewModel.singUpView(),
+                                viewModel.signUpView(),
                                tag: 1,
                                selection: $action,
                                label: {EmptyView()})
@@ -133,7 +133,7 @@ extension SingInView {
 struct SingIn_Previews: PreviewProvider {
     static var previews: some View {
         ForEach(ColorScheme.allCases, id: \.self) {
-            let viewModel = SingInViewModel()
+            let viewModel = SignInViewModel()
             SingInView(viewModel: viewModel)
                 .previewDevice("Iphone 11")
                 .preferredColorScheme($0)

@@ -8,7 +8,7 @@
 import Foundation
 
 enum SingInUiState: Equatable {
-    case nome
+    case none
     case loading
     case goToHomeScreen
     case error(String)

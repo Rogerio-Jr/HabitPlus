@@ -11,17 +11,23 @@
 		11042FFF29ACED3C00804E4D /* LoadingButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11042FFE29ACED3C00804E4D /* LoadingButtonView.swift */; };
 		112E0CC729AB8FAC00E49235 /* EditTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 112E0CC629AB8FAC00E49235 /* EditTextView.swift */; };
 		112E0CCA29ABA1E700E49235 /* CustomTextFieldStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 112E0CC929ABA1E700E49235 /* CustomTextFieldStyle.swift */; };
+		113C0E0329C0FBA20006EE0C /* SingUpResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 113C0E0229C0FBA20006EE0C /* SingUpResponse.swift */; };
 		11424CE3298AE79900A2906E /* SingInView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11424CE2298AE79900A2906E /* SingInView.swift */; };
 		11424CE5298B007500A2906E /* SingInViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11424CE4298B007500A2906E /* SingInViewModel.swift */; };
 		11424CE9298B022D00A2906E /* SplashViewRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11424CE8298B022D00A2906E /* SplashViewRouter.swift */; };
+		115EC50B29F5C3F700086E0F /* SingInErrorResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 115EC50A29F5C3F700086E0F /* SingInErrorResponse.swift */; };
 		1170B27129A1D18D00D6F102 /* Gender.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1170B27029A1D18D00D6F102 /* Gender.swift */; };
 		11754A1B298F6112008D1436 /* SingInUIState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11754A1A298F6112008D1436 /* SingInUIState.swift */; };
 		1182B07A29A325AD0079D160 /* SingUpUIState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1182B07929A325AD0079D160 /* SingUpUIState.swift */; };
 		1182B07C29A326410079D160 /* SingUpViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1182B07B29A326410079D160 /* SingUpViewModel.swift */; };
 		1182B07E29A3273C0079D160 /* SingUpViewRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1182B07D29A3273C0079D160 /* SingUpViewRouter.swift */; };
+		11986B7A29F2BB220093A779 /* SingInRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11986B7929F2BB220093A779 /* SingInRequest.swift */; };
+		11986B7C29F2BD1E0093A779 /* SingInResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11986B7B29F2BD1E0093A779 /* SingInResponse.swift */; };
 		11A38A7B29913E010021A51D /* SingInViewRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11A38A7A29913E010021A51D /* SingInViewRouter.swift */; };
 		11A38A8129913EF60021A51D /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11A38A8029913EF60021A51D /* HomeView.swift */; };
 		11A38A8329913F190021A51D /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11A38A8229913F190021A51D /* HomeViewModel.swift */; };
+		11B98EFF29CC7F5D00656414 /* ErroResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11B98EFE29CC7F5D00656414 /* ErroResponse.swift */; };
+		11C7812F29B4401000B32B79 /* SingUpRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11C7812E29B4401000B32B79 /* SingUpRequest.swift */; };
 		11C7EC0429B225580052D67A /* WebService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11C7EC0329B225580052D67A /* WebService.swift */; };
 		11E74F73299D712F00528406 /* SingUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11E74F72299D712F00528406 /* SingUpView.swift */; };
 		11FAAD452989521D00038D7C /* HabitApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11FAAD442989521D00038D7C /* HabitApp.swift */; };
@@ -37,17 +43,23 @@
 		11042FFE29ACED3C00804E4D /* LoadingButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingButtonView.swift; sourceTree = "<group>"; };
 		112E0CC629AB8FAC00E49235 /* EditTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditTextView.swift; sourceTree = "<group>"; };
 		112E0CC929ABA1E700E49235 /* CustomTextFieldStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextFieldStyle.swift; sourceTree = "<group>"; };
+		113C0E0229C0FBA20006EE0C /* SingUpResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingUpResponse.swift; sourceTree = "<group>"; };
 		11424CE2298AE79900A2906E /* SingInView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingInView.swift; sourceTree = "<group>"; };
 		11424CE4298B007500A2906E /* SingInViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingInViewModel.swift; sourceTree = "<group>"; };
 		11424CE8298B022D00A2906E /* SplashViewRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashViewRouter.swift; sourceTree = "<group>"; };
+		115EC50A29F5C3F700086E0F /* SingInErrorResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingInErrorResponse.swift; sourceTree = "<group>"; };
 		1170B27029A1D18D00D6F102 /* Gender.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Gender.swift; sourceTree = "<group>"; };
 		11754A1A298F6112008D1436 /* SingInUIState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingInUIState.swift; sourceTree = "<group>"; };
 		1182B07929A325AD0079D160 /* SingUpUIState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingUpUIState.swift; sourceTree = "<group>"; };
 		1182B07B29A326410079D160 /* SingUpViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingUpViewModel.swift; sourceTree = "<group>"; };
 		1182B07D29A3273C0079D160 /* SingUpViewRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingUpViewRouter.swift; sourceTree = "<group>"; };
+		11986B7929F2BB220093A779 /* SingInRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingInRequest.swift; sourceTree = "<group>"; };
+		11986B7B29F2BD1E0093A779 /* SingInResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingInResponse.swift; sourceTree = "<group>"; };
 		11A38A7A29913E010021A51D /* SingInViewRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingInViewRouter.swift; sourceTree = "<group>"; };
 		11A38A8029913EF60021A51D /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		11A38A8229913F190021A51D /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
+		11B98EFE29CC7F5D00656414 /* ErroResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErroResponse.swift; sourceTree = "<group>"; };
+		11C7812E29B4401000B32B79 /* SingUpRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingUpRequest.swift; sourceTree = "<group>"; };
 		11C7EC0329B225580052D67A /* WebService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebService.swift; sourceTree = "<group>"; };
 		11E74F72299D712F00528406 /* SingUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingUpView.swift; sourceTree = "<group>"; };
 		11FAAD412989521D00038D7C /* Habit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Habit.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -118,6 +130,9 @@
 			isa = PBXGroup;
 			children = (
 				11754A1A298F6112008D1436 /* SingInUIState.swift */,
+				11986B7929F2BB220093A779 /* SingInRequest.swift */,
+				11986B7B29F2BD1E0093A779 /* SingInResponse.swift */,
+				115EC50A29F5C3F700086E0F /* SingInErrorResponse.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -146,6 +161,7 @@
 			isa = PBXGroup;
 			children = (
 				1170B27029A1D18D00D6F102 /* Gender.swift */,
+				11B98EFE29CC7F5D00656414 /* ErroResponse.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -205,6 +221,8 @@
 			isa = PBXGroup;
 			children = (
 				1182B07929A325AD0079D160 /* SingUpUIState.swift */,
+				11C7812E29B4401000B32B79 /* SingUpRequest.swift */,
+				113C0E0229C0FBA20006EE0C /* SingUpResponse.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -382,14 +400,20 @@
 				11C7EC0429B225580052D67A /* WebService.swift in Sources */,
 				11424CE3298AE79900A2906E /* SingInView.swift in Sources */,
 				11A38A7B29913E010021A51D /* SingInViewRouter.swift in Sources */,
+				11986B7C29F2BD1E0093A779 /* SingInResponse.swift in Sources */,
+				11B98EFF29CC7F5D00656414 /* ErroResponse.swift in Sources */,
 				11424CE5298B007500A2906E /* SingInViewModel.swift in Sources */,
 				1170B27129A1D18D00D6F102 /* Gender.swift in Sources */,
 				11E74F73299D712F00528406 /* SingUpView.swift in Sources */,
 				11754A1B298F6112008D1436 /* SingInUIState.swift in Sources */,
 				11424CE9298B022D00A2906E /* SplashViewRouter.swift in Sources */,
+				115EC50B29F5C3F700086E0F /* SingInErrorResponse.swift in Sources */,
+				11C7812F29B4401000B32B79 /* SingUpRequest.swift in Sources */,
+				11986B7A29F2BB220093A779 /* SingInRequest.swift in Sources */,
 				112E0CCA29ABA1E700E49235 /* CustomTextFieldStyle.swift in Sources */,
 				112E0CC729AB8FAC00E49235 /* EditTextView.swift in Sources */,
 				11FAAD5D2989891400038D7C /* SplashViewModel.swift in Sources */,
+				113C0E0329C0FBA20006EE0C /* SingUpResponse.swift in Sources */,
 				1182B07A29A325AD0079D160 /* SingUpUIState.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
