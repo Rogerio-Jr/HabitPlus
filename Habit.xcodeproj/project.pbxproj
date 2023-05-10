@@ -16,8 +16,14 @@
 		11424CE5298B007500A2906E /* SingInViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11424CE4298B007500A2906E /* SingInViewModel.swift */; };
 		11424CE9298B022D00A2906E /* SplashViewRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11424CE8298B022D00A2906E /* SplashViewRouter.swift */; };
 		115EC50B29F5C3F700086E0F /* SingInErrorResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 115EC50A29F5C3F700086E0F /* SingInErrorResponse.swift */; };
+		116284C02A042C4600C04581 /* SignInInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 116284BF2A042C4600C04581 /* SignInInteractor.swift */; };
+		116284C22A04301100C04581 /* SignInRemoteDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 116284C12A04301100C04581 /* SignInRemoteDataSource.swift */; };
+		11680EA92A0ABFA90023C0E9 /* SignUpInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11680EA82A0ABFA90023C0E9 /* SignUpInteractor.swift */; };
+		11680EAB2A0AC1BF0023C0E9 /* SignUpRemoteDataSoucer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11680EAA2A0AC1BF0023C0E9 /* SignUpRemoteDataSoucer.swift */; };
+		116C63F92A052590006E778C /* AppError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 116C63F82A052590006E778C /* AppError.swift */; };
 		1170B27129A1D18D00D6F102 /* Gender.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1170B27029A1D18D00D6F102 /* Gender.swift */; };
 		11754A1B298F6112008D1436 /* SingInUIState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11754A1A298F6112008D1436 /* SingInUIState.swift */; };
+		11814A812A0B4B2500B42F25 /* UserAuth.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11814A802A0B4B2500B42F25 /* UserAuth.swift */; };
 		1182B07A29A325AD0079D160 /* SingUpUIState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1182B07929A325AD0079D160 /* SingUpUIState.swift */; };
 		1182B07C29A326410079D160 /* SingUpViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1182B07B29A326410079D160 /* SingUpViewModel.swift */; };
 		1182B07E29A3273C0079D160 /* SingUpViewRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1182B07D29A3273C0079D160 /* SingUpViewRouter.swift */; };
@@ -48,8 +54,14 @@
 		11424CE4298B007500A2906E /* SingInViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingInViewModel.swift; sourceTree = "<group>"; };
 		11424CE8298B022D00A2906E /* SplashViewRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashViewRouter.swift; sourceTree = "<group>"; };
 		115EC50A29F5C3F700086E0F /* SingInErrorResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingInErrorResponse.swift; sourceTree = "<group>"; };
+		116284BF2A042C4600C04581 /* SignInInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInInteractor.swift; sourceTree = "<group>"; };
+		116284C12A04301100C04581 /* SignInRemoteDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInRemoteDataSource.swift; sourceTree = "<group>"; };
+		11680EA82A0ABFA90023C0E9 /* SignUpInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpInteractor.swift; sourceTree = "<group>"; };
+		11680EAA2A0AC1BF0023C0E9 /* SignUpRemoteDataSoucer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpRemoteDataSoucer.swift; sourceTree = "<group>"; };
+		116C63F82A052590006E778C /* AppError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppError.swift; sourceTree = "<group>"; };
 		1170B27029A1D18D00D6F102 /* Gender.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Gender.swift; sourceTree = "<group>"; };
 		11754A1A298F6112008D1436 /* SingInUIState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingInUIState.swift; sourceTree = "<group>"; };
+		11814A802A0B4B2500B42F25 /* UserAuth.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserAuth.swift; sourceTree = "<group>"; };
 		1182B07929A325AD0079D160 /* SingUpUIState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingUpUIState.swift; sourceTree = "<group>"; };
 		1182B07B29A326410079D160 /* SingUpViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingUpViewModel.swift; sourceTree = "<group>"; };
 		1182B07D29A3273C0079D160 /* SingUpViewRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingUpViewRouter.swift; sourceTree = "<group>"; };
@@ -110,6 +122,7 @@
 		11424CDD298AE4CC00A2906E /* SignIn */ = {
 			isa = PBXGroup;
 			children = (
+				116284BE2A042C2300C04581 /* Interactor */,
 				11424CE1298AE5C100A2906E /* View */,
 				11424CDF298AE4F500A2906E /* Model */,
 				11424CDE298AE4E600A2906E /* ViewModel */,
@@ -145,6 +158,24 @@
 			path = View;
 			sourceTree = "<group>";
 		};
+		116284BE2A042C2300C04581 /* Interactor */ = {
+			isa = PBXGroup;
+			children = (
+				116284C12A04301100C04581 /* SignInRemoteDataSource.swift */,
+				116284BF2A042C4600C04581 /* SignInInteractor.swift */,
+			);
+			path = Interactor;
+			sourceTree = "<group>";
+		};
+		11680EA72A0ABF830023C0E9 /* Interactor */ = {
+			isa = PBXGroup;
+			children = (
+				11680EA82A0ABFA90023C0E9 /* SignUpInteractor.swift */,
+				11680EAA2A0AC1BF0023C0E9 /* SignUpRemoteDataSoucer.swift */,
+			);
+			path = Interactor;
+			sourceTree = "<group>";
+		};
 		1170B26E29A1D16700D6F102 /* Commom */ = {
 			isa = PBXGroup;
 			children = (
@@ -162,6 +193,8 @@
 			children = (
 				1170B27029A1D18D00D6F102 /* Gender.swift */,
 				11B98EFE29CC7F5D00656414 /* ErroResponse.swift */,
+				116C63F82A052590006E778C /* AppError.swift */,
+				11814A802A0B4B2500B42F25 /* UserAuth.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -210,6 +243,7 @@
 		11E74F6E299D70CD00528406 /* SingUp */ = {
 			isa = PBXGroup;
 			children = (
+				11680EA72A0ABF830023C0E9 /* Interactor */,
 				11E74F71299D711000528406 /* ViewModel */,
 				11E74F70299D710500528406 /* View */,
 				11E74F6F299D70F800528406 /* Model */,
@@ -390,16 +424,21 @@
 			files = (
 				1182B07C29A326410079D160 /* SingUpViewModel.swift in Sources */,
 				11FAAD5A298954B300038D7C /* SplashUIState.swift in Sources */,
+				116C63F92A052590006E778C /* AppError.swift in Sources */,
 				11A38A8329913F190021A51D /* HomeViewModel.swift in Sources */,
+				11680EAB2A0AC1BF0023C0E9 /* SignUpRemoteDataSoucer.swift in Sources */,
+				116284C22A04301100C04581 /* SignInRemoteDataSource.swift in Sources */,
 				11042FFF29ACED3C00804E4D /* LoadingButtonView.swift in Sources */,
 				11042FFD29ACE4A800804E4D /* String+Extension.swift in Sources */,
 				1182B07E29A3273C0079D160 /* SingUpViewRouter.swift in Sources */,
+				11814A812A0B4B2500B42F25 /* UserAuth.swift in Sources */,
 				11FAAD452989521D00038D7C /* HabitApp.swift in Sources */,
 				11FAAD582989538600038D7C /* SplashView.swift in Sources */,
 				11A38A8129913EF60021A51D /* HomeView.swift in Sources */,
 				11C7EC0429B225580052D67A /* WebService.swift in Sources */,
 				11424CE3298AE79900A2906E /* SingInView.swift in Sources */,
 				11A38A7B29913E010021A51D /* SingInViewRouter.swift in Sources */,
+				116284C02A042C4600C04581 /* SignInInteractor.swift in Sources */,
 				11986B7C29F2BD1E0093A779 /* SingInResponse.swift in Sources */,
 				11B98EFF29CC7F5D00656414 /* ErroResponse.swift in Sources */,
 				11424CE5298B007500A2906E /* SingInViewModel.swift in Sources */,
@@ -409,6 +448,7 @@
 				11424CE9298B022D00A2906E /* SplashViewRouter.swift in Sources */,
 				115EC50B29F5C3F700086E0F /* SingInErrorResponse.swift in Sources */,
 				11C7812F29B4401000B32B79 /* SingUpRequest.swift in Sources */,
+				11680EA92A0ABFA90023C0E9 /* SignUpInteractor.swift in Sources */,
 				11986B7A29F2BB220093A779 /* SingInRequest.swift in Sources */,
 				112E0CCA29ABA1E700E49235 /* CustomTextFieldStyle.swift in Sources */,
 				112E0CC729AB8FAC00E49235 /* EditTextView.swift in Sources */,

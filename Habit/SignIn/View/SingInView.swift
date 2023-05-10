@@ -133,7 +133,7 @@ extension SingInView {
 struct SingIn_Previews: PreviewProvider {
     static var previews: some View {
         ForEach(ColorScheme.allCases, id: \.self) {
-            let viewModel = SignInViewModel()
+            let viewModel = SignInViewModel(interactor: SignInInteractor())
             SingInView(viewModel: viewModel)
                 .previewDevice("Iphone 11")
                 .preferredColorScheme($0)

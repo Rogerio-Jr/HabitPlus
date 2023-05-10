@@ -71,63 +71,47 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "A0A1C0CC-B955-4DF0-9934-669AAA48006D"
+            uuid = "EFB2EBEE-3CB1-4089-999A-90FD5EC464F0"
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Habit/SignIn/ViewModel/SingInViewModel.swift"
+            filePath = "Habit/Commom/Network/WebService.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "38"
-            endingLineNumber = "38"
-            landmarkName = "login()"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "C23B8C36-CD24-4F19-8347-B30F775167E8"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Habit/SignIn/ViewModel/SingInViewModel.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "41"
-            endingLineNumber = "41"
-            landmarkName = "login()"
+            startingLineNumber = "49"
+            endingLineNumber = "49"
+            landmarkName = "call(path:contentType:data:completion:)"
             landmarkType = "7">
             <Locations>
                <Location
-                  uuid = "C23B8C36-CD24-4F19-8347-B30F775167E8 - a4858e0972479f5"
+                  uuid = "EFB2EBEE-3CB1-4089-999A-90FD5EC464F0 - f07b9bbf8cdee51e"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (Swift.Optional&lt;Habit.SingInResponse&gt;, Swift.Optional&lt;Habit.ErroResponse&gt;) -&gt; () in Habit.SignInViewModel.login() -&gt; ()"
+                  symbolName = "closure #1 @Sendable (Swift.Optional&lt;Foundation.Data&gt;, Swift.Optional&lt;__C.NSURLResponse&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in static Habit.WebService.call(path: Habit.WebService.Endpoint, contentType: Habit.WebService.ContentType, data: Swift.Optional&lt;Foundation.Data&gt;, completion: (Habit.WebService.Result) -&gt; ()) -&gt; ()"
                   moduleName = "Habit"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/rogeriojr/Documents/My%20Apps/Habit/Habit/SignIn/ViewModel/SingInViewModel.swift"
+                  urlString = "file:///Users/rogeriojr/Documents/My%20Apps/Habit/Habit/Commom/Network/WebService.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "41"
-                  endingLineNumber = "41"
-                  offsetFromSymbolStart = "212">
+                  startingLineNumber = "49"
+                  endingLineNumber = "49"
+                  offsetFromSymbolStart = "188">
                </Location>
                <Location
-                  uuid = "C23B8C36-CD24-4F19-8347-B30F775167E8 - a4858e0972479f5"
+                  uuid = "EFB2EBEE-3CB1-4089-999A-90FD5EC464F0 - f07b9bbf8cdee51e"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (Swift.Optional&lt;Habit.SingInResponse&gt;, Swift.Optional&lt;Habit.ErroResponse&gt;) -&gt; () in Habit.SignInViewModel.login() -&gt; ()"
+                  symbolName = "closure #1 @Sendable (Swift.Optional&lt;Foundation.Data&gt;, Swift.Optional&lt;__C.NSURLResponse&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in static Habit.WebService.call(path: Habit.WebService.Endpoint, contentType: Habit.WebService.ContentType, data: Swift.Optional&lt;Foundation.Data&gt;, completion: (Habit.WebService.Result) -&gt; ()) -&gt; ()"
                   moduleName = "Habit"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/rogeriojr/Documents/My%20Apps/Habit/Habit/SignIn/ViewModel/SingInViewModel.swift"
+                  urlString = "file:///Users/rogeriojr/Documents/My%20Apps/Habit/Habit/Commom/Network/WebService.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "41"
-                  endingLineNumber = "41"
-                  offsetFromSymbolStart = "248">
+                  startingLineNumber = "49"
+                  endingLineNumber = "49"
+                  offsetFromSymbolStart = "236">
                </Location>
             </Locations>
          </BreakpointContent>
@@ -135,48 +119,32 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "21697455-4BD4-45F5-8EF9-8376DEBAF4E7"
+            uuid = "0DCFFE82-21ED-4C80-A71F-51594484B1A2"
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Habit/Commom/Network/WebService.swift"
+            filePath = "Habit/SignIn/ViewModel/SingInViewModel.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "122"
-            endingLineNumber = "122"
-            landmarkName = "login(request:completion:)"
+            startingLineNumber = "47"
+            endingLineNumber = "47"
+            landmarkName = "login()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "4E431773-26A7-4159-A648-FAD48F95FBC1"
+            uuid = "628ED1AB-93D1-4629-869D-3B55EC081C47"
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Habit/Commom/Network/WebService.swift"
+            filePath = "Habit/SignIn/ViewModel/SingInViewModel.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "127"
-            endingLineNumber = "127"
-            landmarkName = "login(request:completion:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "BA0E27DF-CACF-4283-98B9-4878940B1F64"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Habit/Commom/Network/WebService.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "126"
-            endingLineNumber = "126"
-            landmarkName = "login(request:completion:)"
+            startingLineNumber = "57"
+            endingLineNumber = "57"
+            landmarkName = "login()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

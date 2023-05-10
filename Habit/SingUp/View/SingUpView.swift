@@ -154,7 +154,7 @@ extension SingUpView {
 struct SingUpView_Previews: PreviewProvider {
     static var previews: some View {
         ForEach(ColorScheme.allCases, id: \.self) {
-            SingUpView(viewModel: SingUpViewModel())
+            SingUpView(viewModel: SingUpViewModel(interactor: SignUpInteractor()))
                 .previewDevice("Iphone 11")
                 .preferredColorScheme($0)
         }

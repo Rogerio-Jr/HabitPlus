@@ -10,7 +10,7 @@ import SwiftUI
 enum SplashViewRouter {
     
     static func makeSingInView() -> some View {
-        let viewModel = SignInViewModel()
+        let viewModel = SignInViewModel(interactor: SignInInteractor())
         return SingInView (viewModel: viewModel)
         
     }

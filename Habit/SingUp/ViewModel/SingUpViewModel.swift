@@ -20,7 +20,21 @@ class SingUpViewModel: ObservableObject {
     
     var publisher: PassthroughSubject<Bool, Never>!
     
+    private var cancellableSignUp: AnyCancellable?
+    private var cancellableSignIn: AnyCancellable?
+    
     @Published var uiState: SingUpUIState = .nome
+    
+    private let interactor: SignUpInteractor
+    
+    init (interactor: SignUpInteractor) {
+        self.interactor = interactor
+    }
+    
+    deinit {
+        cancellableSignUp?.cancel()
+        cancellableSignIn?.cancel()
+    }
     
     func singUp(){
         self.uiState = .loading
@@ -39,52 +53,92 @@ class SingUpViewModel: ObservableObject {
         formatter.dateFormat = "yyyy-MM-dd"
         let birthday = formatter.string(from: dateFomatted)
         
-        WebService.postUser(request: SingUpRequest(fullName: fullName,
-                                                   email: email,
-                                                   password: password,
-                                                   document: document,
-                                                   phone: phone,
-                                                   birthday: birthday,
-                                                   gender: gender.index)){ (sucessResponse, errorResponse) in
-            if let error = errorResponse {
-                DispatchQueue.main.async {
-                    self.uiState = .error(error.detail)
+        
+        let signUpRequest = SingUpRequest(fullName: fullName,
+                                          email: email,
+                                          password: password,
+                                          document: document,
+                                          phone: phone,
+                                          birthday: birthday,
+                                          gender: gender.index)
+        
+       cancellableSignUp = interactor.postUser(signUpRequest: signUpRequest)
+            .receive(on: DispatchQueue.main)
+            .sink { completion in
+                
+                switch(completion){
+                case .failure(let appError):
+                    self.uiState = .error(appError.message)
+                    break
+                case .finished:
+                    break
+                }
+                
+            } receiveValue: { created in
+                if(created) {
+                    
+                    self.cancellableSignIn = self.interactor.login(signInRequest: SingInRequest(email: self.email, password: self.password))
+                        .receive(on: DispatchQueue.main)
+                        .sink { completion in
+                            switch(completion) {
+                            case .failure(let appError):
+                                self.uiState = .error(appError.message)
+                                break
+                            case .finished:
+                                break
+                            }
+                        } receiveValue: { successSignIn in
+                            
+                            print(created)
+                            self.publisher.send(created)
+                            self.uiState = .sucess
+                        }
+                    
+                    
                 }
             }
-            
-            if let sucess = sucessResponse {
-                
-                WebService.login(request: SingInRequest(email: self.email,
-                                                        password: self.password)) { (successResponse, errorResponse) in
-                    
-                    if let errorSignIn = errorResponse {
-                        DispatchQueue.main.async {
-                            // Main Thread
-                            self.uiState = .error(errorSignIn.detail.message)
-                        }
-                    }
-                    
-                    if let successSignIn = successResponse {
-                        DispatchQueue.main.async {
-                            print(successSignIn)
-                            self.publisher.send(sucess)
-                                self.uiState = .sucess
-                           
-                        }
-                    }
-                    
+        
+        
+        //        interactor.postUser(signupRequest: signUpRequest) { (sucessResponse, errorResponse) in
+        //            if let error = errorResponse {
+        //                DispatchQueue.main.async {
+        //                    self.uiState = .error(error.detail)
+        //                }
+        //            }
+        
+        //            if let sucess = sucessResponse {
+        //
+        ////                WebService.login(request: SingInRequest(email: self.email,
+        ////                                                        password: self.password)) { (successResponse, errorResponse) in
+        ////
+        ////                    if let errorSignIn = errorResponse {
+        ////                        DispatchQueue.main.async {
+        ////                            // Main Thread
+        ////                            self.uiState = .error(errorSignIn.detail.message)
+        ////                        }
+        ////                    }
+        ////
+        ////                    if let successSignIn = successResponse {
+        ////                        DispatchQueue.main.async {
+        ////                            print(successSignIn)
+        ////                            self.publisher.send(sucess)
+        ////                                self.uiState = .sucess
+        ////
+        ////                        }
+        ////                    }
+        ////
+        ////                }
+        //
+        //                DispatchQueue.main.async {
+        //
+        //                }
+        //            }
                 }
-                
-                DispatchQueue.main.async {
-                    
-                }
+            }
+        
+        
+        extension SingUpViewModel {
+            func homeView()-> some View{
+                return SingUpViewRouter.makeHomeView()
             }
         }
-    }
-}
-
-extension SingUpViewModel {
-    func homeView()-> some View{
-        return SingUpViewRouter.makeHomeView()
-    }
-}
