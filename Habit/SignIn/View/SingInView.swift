@@ -68,10 +68,15 @@ struct SingInView: View {
                         .padding(.horizontal, 32)
                         .navigationBarTitle("Login", displayMode: .inline)
                         .navigationBarHidden(navigationHidden)
-                }            }
+                    
+                } .onAppear {
+                    self.navigationHidden = true
+                }
+                .onDisappear {
+                    self.navigationHidden = true
+                }
+            }
         }
-        
-       
     }
 }
 

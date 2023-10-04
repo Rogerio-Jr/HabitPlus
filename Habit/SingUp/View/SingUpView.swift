@@ -9,7 +9,7 @@ import SwiftUI
 
 struct SingUpView: View {
     
-    @ObservedObject var viewModel: SingUpViewModel
+    @ObservedObject var viewModel: SignUpViewModel
     
     //TODO: gender
     
@@ -66,7 +66,8 @@ extension SingUpView {
                      placeholder: "Entre com o nome completo *",
                      keyboard: .alphabet,
                      error: "Nome inválido",
-                     failure: viewModel.fullName.count < 3)
+                     failure: viewModel.fullName.count < 3,
+                     autocapitalization: .words)
     }
 }
 
@@ -138,7 +139,7 @@ extension SingUpView {
 extension SingUpView {
     var saveButton: some View {
         LoadingButtonView(action: {
-            viewModel.singUp()
+            viewModel.signUp()
         }, disable: !viewModel.email.isEmail() ||
                           viewModel.password.count < 8 ||
                           viewModel.fullName.count < 3 ||
@@ -154,7 +155,7 @@ extension SingUpView {
 struct SingUpView_Previews: PreviewProvider {
     static var previews: some View {
         ForEach(ColorScheme.allCases, id: \.self) {
-            SingUpView(viewModel: SingUpViewModel(interactor: SignUpInteractor()))
+            SingUpView(viewModel: SignUpViewModel(interactor: SignUpInteractor()))
                 .previewDevice("Iphone 11")
                 .preferredColorScheme($0)
         }

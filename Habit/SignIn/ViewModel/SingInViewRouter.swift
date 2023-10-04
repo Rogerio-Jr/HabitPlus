@@ -14,7 +14,7 @@ enum SingInViewRouter {
         return HomeView (viewModel: viewModel)
     }
     static func makeSingUpView(publisher: PassthroughSubject<Bool, Never>) -> some View{
-        let viewModel = SingUpViewModel(interactor: SignUpInteractor())
+        let viewModel = SignUpViewModel(interactor: SignUpInteractor())
         viewModel.publisher = publisher
         return SingUpView(viewModel: viewModel)
     }
